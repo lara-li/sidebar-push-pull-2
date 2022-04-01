@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation BAR with Icons</title>
+    <script src="https://kit.fontawesome.com/444b1c8316.js" crossorigin="anonymous"></script>
+    <style>
+        *,
+        ::after,
+        ::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: fit-content;
+            width: 200px;
+            height: 100%;
+            background: #009879;
+            border-right: 2px solid #008c71;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .navbar--hidden {
+            opacity: 0;
+            left: -200px;
+
+        }
+
+        .navbar__link {
+            display: flex;
+            align-items: center;
+            background: #008c71;
+            color: #fff;
+            text-decoration: none;
+            padding: 20px 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #009879;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .navbar__link>i {
+            margin-right: 12px;
+            width: 25px;
+        }
+
+        .navbar__link:hover {
+            filter: brightness(95%);
+        }
+
+        .navbar__link:active {
+            filter: brightness(90%);
+        }
+    </style>
+    <script>
+        function toggleNav() {
+            document.querySelector(".navbar").classList.toggle("navbar--hidden");
+
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="toggleNav();" style="float: right; margin:10rem; padding: 0.5rem;">open/close navigation</button>
+    <div class="navbar navbar--hidden">
+        <a href="#" class="navbar__link">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="#" class="navbar__link">
+            <i class="fas fa-images"></i> Photos
+        </a>
+        <a href="#" class="navbar__link">
+            <i class="fas fa-comments"></i> Forum
+        </a>
+        <a href="#" class="navbar__link">
+            <i class="fas fa-sign-out"></i> Sign out
+        </a>
+    </div>
+
+
+</body>
+
+</html>
